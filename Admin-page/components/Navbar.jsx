@@ -1,24 +1,11 @@
-import React from 'react'
-import logo from '../src/assets/react.svg'
-import sidebar from './sidebar'
+import React from 'react';
 
 const Navbar = () => {
   return (
-    <>
-      
-      <nav className='bg-blue-700 w-full fixed top-0 z-50 left-0 flex flex-row justify-between items-center'> 
-        <div className=' mx-auto p-2'>
-            <div className='flex items-center'>
-                <img src="../src/assets/react.svg"
-                alt="logo" 
-                className='logo' />
-                <h1 className='text-2xl font-bold text-white'>Admin Dashboard</h1>
+    <header className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-200 z-10 flex items-center px-4 shadow-sm">
+      <h1 className="text-xl font-bold">MekinaHub Dashboard</h1>
+    </header>
+  );
+};
 
-            </div>
-        </div>
-      </nav>
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;
