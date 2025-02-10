@@ -1,28 +1,37 @@
-import { useState } from 'react';
-import './App.css';
-import Navbar from '../components/Navbar';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from '../components/sidebar';
-import { Router, Routes } from "react-router"
+import Dashboard from '../src/sidebaroptions/dashboard';
+import Vehicles from '../src/sidebaroptions/vehicles';
+//import Customers from './sidebaroptions/Customers';
+//import Messages from './sidebaroptions/Messages';
+import User from '../src/sidebaroptions/userlist';
+//import Analytics from './sidebaroptions/Analytics';
+//import Settings from './sidebaroptions/Settings';
 
 function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="flex">
-      <Router>
+    <Router>
+      <div className="flex">
         <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </Router>
-      
-      {/*<div className={`flex-1 ${isCollapsed ? 'ml-16' : 'ml-64'} transition-all duration-300`}>
-        <Navbar />
-        <main className="pt-16 p-4">
-          <h1 className="text-2xl font-bold">Welcome to the App!</h1>
-        </main>
-      </div>*/}
-    </div>
+        <div
+          className={`flex-1 transition-all duration-300 ${
+            isCollapsed ? 'ml-16' : 'ml-64'
+          }`}
+        >
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/vehicles" element={<Vehicles />} />
+            
+            
+            <Route path="/user" element={<User />} />
+            
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

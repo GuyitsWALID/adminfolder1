@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Filter, Plus, ChevronDown } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 const VehiclesPage = () => {
   const [filterOpen, setFilterOpen] = useState(false);
